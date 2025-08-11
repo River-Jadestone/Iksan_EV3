@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나만의 로봇 탄생! 레고 코딩 캠프</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        /* 슬라이드 기본 스타일 */
+        .slide {
+            display: none;
+            min-height: 80vh;
+            justify-content: center;
+            flex-direction: column;
+        }
+        /* 활성화된 슬라이드만 보이도록 설정 */
+        .slide.active {
+            display: flex;
+        }
+        /* 애니메이션 효과 */
+        .slide {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .mission-text-box {
+            background-color: #F9FAFB; /* Light Gray */
+            padding: 2rem;
+            border-radius: 0.75rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-4">
+
+    <div class="w-full max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden">
+        <!-- Header with new color theme -->
+        <header class="bg-[#49A4B8] text-white p-4 flex justify-center items-center">
+            <h1 class="text-2xl font-bold">🤖 나만의 로봇 탄생! 레고 코딩 캠프</h1>
+        </header>
+
+        <main id="presentation-container" class="p-6 md:p-10">
+            <!-- Slide 1: Title Page -->
+            <section id="slide-1" class="slide active">
+                <div class="text-center">
+                    <h1 class="text-6xl font-black text-[#49A4B8] mb-4 leading-relaxed">나만의 로봇 탄생!<br> 레고 코딩 캠프</h1>
+                    <p class="text-3xl text-gray-600">나의 첫 로봇 코딩</p>
+                    <p class="mt-16 text-2xl text-gray-500">발표자: 두잉굿 김강민</p>
+                </div>
+            </section>
+
+            <!-- Slide 2: Introduction -->
+            <section id="slide-2" class="slide">
+                <h2 class="text-4xl font-black text-gray-800 mb-4">1. 안녕, 로봇 친구! 👋</h2>
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-bold text-[#49A4B8] mb-3">오늘의 로봇 'EV3' 소개</h3>
+                        <ul class="list-disc list-inside text-lg text-gray-700 space-y-2">
+                            <li><span class="font-bold">브릭:</span> 로봇의 똑똑한 '뇌'예요.</li>
+                            <li><span class="font-bold">라지 모터:</span> 로봇의 '다리'예요.</li>
+                            <li><span class="font-bold">센서:</span> 로봇의 '눈과 귀'예요.</li>
+                            <li><span class="font-bold">드라이빙 베이스:</span> 오늘 만들 로봇 자동차예요!</li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="https://placehold.co/400x300/49A4B8/FFFFFF?text=EV3+%EB%A1%9C%EB%B4%87" alt="친근한 EV3 로봇 이미지" class="rounded-lg shadow-lg w-full">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 3: Assembly -->
+            <section id="slide-3" class="slide">
+                <h2 class="text-4xl font-black text-gray-800 mb-4">2. 나만의 로봇 만들기! 🛠️</h2>
+                 <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="md:w-1/2">
+                        <img src="https://placehold.co/400x300/B43C8C/FFFFFF?text=Driving+Base" alt="EV3 드라이빙 베이스 모델 이미지" class="rounded-lg shadow-lg w-full">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-bold text-[#B43C8C] mb-3">따라 만들기 (25분)</h3>
+                        <p class="text-lg text-gray-600 mb-6">EV3 클래스룸 앱에 있는 '드라이빙 베이스' 조립 설명서를 보고 로봇을 조립해요.</p>
+                        <p class="text-lg text-gray-600">친구와 함께 역할을 나누어 조립하면 더 빠르고 재미있어요!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 4: Connection -->
+            <section id="slide-4" class="slide">
+                <div class="w-full">
+                    <h2 class="text-4xl font-black text-gray-800 mb-6 text-center">3. 로봇과 컴퓨터 연결하기 🔌</h2>
+                    <div class="flex flex-col md:flex-row gap-8 items-center">
+                        <div class="md:w-1/2 mission-text-box">
+                            <p class="text-2xl font-bold text-[#49A4B8]">프로그래밍을 시작하기 전에,<br>로봇과 컴퓨터를 연결해요!</p>
+                            <p class="text-lg text-gray-600 mt-4">EV3 브릭의 블루투스 기능을 켜거나, USB 케이블을 사용해서 연결할 수 있어요.</p>
+                        </div>
+                        <div class="md:w-1/2">
+                            <img src="https://placehold.co/400x300/F2D027/FFFFFF?text=블루투스+또는+USB+연결" alt="블루투스 또는 USB 연결 이미지" class="rounded-lg shadow-lg w-full">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 5: Mission 1 -->
+            <section id="slide-5" class="slide">
+                <div class="w-full">
+                    <h2 class="text-4xl font-black text-gray-800 mb-6 text-center">4. 미션 1: 로봇을 앞으로!</h2>
+                    <div class="flex flex-col md:flex-row gap-8 items-center">
+                        <div class="md:w-1/2 mission-text-box">
+                            <p class="text-2xl font-bold text-[#49A4B8]">`[모터 1바퀴 회전하기]` <br>블록을 사용해서 로봇을 앞으로 움직여 보세요.</p>
+                            <p class="text-lg text-gray-600 mt-4">숫자를 바꾸면 얼마나 더 가는지 실험해봐요!</p>
+                        </div>
+                        <div class="md:w-1/2">
+                            <img src="https://placehold.co/400x300/49A4B8/FFFFFF?text=로봇+앞으로+가기" alt="로봇이 앞으로 가는 이미지" class="rounded-lg shadow-lg w-full">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 6: Mission 2 -->
+            <section id="slide-6" class="slide">
+                 <div class="w-full">
+                    <h2 class="text-4xl font-black text-gray-800 mb-6 text-center">5. 미션 2: 원하는 곳에 멈추기!</h2>
+                    <div class="flex flex-col md:flex-row gap-8 items-center">
+                        <div class="md:w-1/2 mission-text-box">
+                            <p class="text-2xl font-bold text-[#49A4B8]">바닥에 표시된 도착선에 로봇을 가장 가깝게 멈춰보세요.</p>
+                            <p class="text-lg text-gray-600 mt-4">'바퀴 회전 수'를 얼마로 해야 할까요? 여러 번 도전해서 최고의 값을 찾아봐요!</p>
+                        </div>
+                        <div class="md:w-1/2">
+                            <img src="https://placehold.co/400x300/B43C8C/FFFFFF?text=도착선에+멈추기" alt="도착선에 멈춘 로봇 이미지" class="rounded-lg shadow-lg w-full">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 7: Mission 3 -->
+            <section id="slide-7" class="slide">
+                <div class="w-full">
+                    <h2 class="text-4xl font-black text-gray-800 mb-6 text-center">6. 미션 3: 빠르거나 느리거나!</h2>
+                    <div class="flex flex-col md:flex-row gap-8 items-center">
+                        <div class="md:w-1/2 mission-text-box">
+                            <p class="text-2xl font-bold text-[#49A4B8]">`[이동 속도를 50%로 정하기]` <br>블록으로 로봇의 속도를 조절해 보세요.</p>
+                            <p class="text-lg text-gray-600 mt-4">속도가 20%일 때와 100%일 때는 어떻게 다를까요?</p>
+                        </div>
+                        <div class="md:w-1/2">
+                            <img src="https://placehold.co/400x300/F2D027/FFFFFF?text=속도+조절하기" alt="속도 조절 블록 이미지" class="rounded-lg shadow-lg w-full">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Slide 8: Mission 4 -->
+            <section id="slide-8" class="slide">
+                <div class="w-full">
+                    <h2 class="text-4xl font-black text-gray-800 mb-6 text-center">7. 미션 4: 방향을 바꿔볼까?</h2>
+                     <div class="flex flex-col md:flex-row gap-8 items-center">
+                        <div class="md:w-1/2 mission-text-box">
+                            <p class="text-2xl font-bold text-[#49A4B8]">`[조향하기]` <br>블록으로 로봇을 좌회전, 우회전 시켜보세요.</p>
+                            <p class="text-lg text-gray-600 mt-4">도전! 로봇으로 사각형을 그리며 움직이게 프로그래밍 해보세요.</p>
+                        </div>
+                        <div class="md:w-1/2">
+                            <img src="https://placehold.co/400x300/B43C8C/FFFFFF?text=방향+바꾸기" alt="로봇이 회전하는 이미지" class="rounded-lg shadow-lg w-full">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 9: Mission 5 -->
+            <section id="slide-9" class="slide">
+                <div class="w-full">
+                    <h2 class="text-4xl font-black text-gray-800 mb-6 text-center">8. 미션 5: 컬링 최종 연습!</h2>
+                     <div class="flex flex-col md:flex-row gap-8 items-center">
+                        <div class="md:w-1/2 mission-text-box">
+                            <p class="text-2xl font-bold text-[#49A4B8]">지금까지 배운 모든 기술을 사용해서 컬링 표적 중앙에 로봇을 보내보세요!</p>
+                            <p class="text-lg text-gray-600 mt-4">직선으로만 갈 필요 없어요. 방향을 틀어서 더 정확하게 보낼 수도 있답니다!</p>
+                        </div>
+                        <div class="md:w-1/2">
+                            <img src="https://placehold.co/400x300/49A4B8/FFFFFF?text=최종+연습" alt="컬링 표적을 향하는 로봇 이미지" class="rounded-lg shadow-lg w-full">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 10: Wrap-up -->
+            <section id="slide-10" class="slide">
+                <h2 class="text-4xl font-black text-gray-800 mb-4">9. 다음 도전을 준비하며! ✨</h2>
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-bold text-[#49A4B8] mb-3">오늘 배운 내용 정리</h3>
+                        <ul class="list-check list-inside text-lg text-gray-700 space-y-2">
+                            <li>✔️ 로봇을 조립하고 컴퓨터와 연결했어요.</li>
+                            <li>✔️ 코딩으로 로봇을 움직이고, 멈추고, 속도와 방향을 조절했어요.</li>
+                            <li>✔️ 친구와 협력해서 문제를 해결했어요.</li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/2 bg-[#49A4B8]/10 p-6 rounded-lg">
+                        <h3 class="text-2xl font-bold text-[#49A4B8] mb-3">다음 시간 안내</h3>
+                        <p class="text-lg text-gray-700">"오늘 배운 기술을 사용해서 다음 시간에는 드디어! 신나는 **로봇 컬링 대회**를 열 거예요! 오늘 연습한 것을 잘 기억해서 최고의 컬링 선수가 되어보세요!"</p>
+                    </div>
+                </div>
+                 <div class="mt-8 text-center">
+                    <p class="text-xl font-bold text-gray-700">오늘 수업 끝! 모두 수고했어요!</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer with new color theme and logo moved to the right -->
+        <footer class="bg-gray-200 p-4 flex justify-between items-center">
+            <div id="slide-counter" class="text-gray-600 font-semibold">슬라이드 1 / 10</div>
+            <div>
+                <button id="prev-btn" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
+                    이전
+                </button>
+                <button id="next-btn" class="bg-[#F47521] hover:bg-[#d9681e] text-white font-bold py-2 px-4 rounded-lg transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
+                    다음
+                </button>
+            </div>
+            <img src="https://i.imgur.com/FtLGl54.png" alt="학원 로고" class="h-10">
+        </footer>
+    </div>
+
+    <script>
+        // 프레젠테이션 스크립트
+        document.addEventListener('DOMContentLoaded', function () {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const slideCounter = document.getElementById('slide-counter');
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+
+            function showSlide(index) {
+                // 모든 슬라이드 숨기기
+                slides.forEach((slide) => {
+                    slide.classList.remove('active');
+                });
+                // 현재 슬라이드만 보이기
+                slides[index].classList.add('active');
+                // 슬라이드 카운터 업데이트
+                slideCounter.textContent = `슬라이드 ${index + 1} / ${totalSlides}`;
+                // 버튼 활성/비활성 상태 업데이트
+                updateButtons();
+            }
+
+            function updateButtons() {
+                prevBtn.disabled = currentSlide === 0;
+                nextBtn.disabled = currentSlide === totalSlides - 1;
+            }
+
+            function goToNextSlide() {
+                if (currentSlide < totalSlides - 1) {
+                    currentSlide++;
+                    showSlide(currentSlide);
+                }
+            }
+
+            function goToPrevSlide() {
+                 if (currentSlide > 0) {
+                    currentSlide--;
+                    showSlide(currentSlide);
+                }
+            }
+
+            // '다음' 버튼 클릭 이벤트
+            nextBtn.addEventListener('click', goToNextSlide);
+
+            // '이전' 버튼 클릭 이벤트
+            prevBtn.addEventListener('click', goToPrevSlide);
+
+            // 키보드 이벤트 리스너 추가
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'ArrowRight') {
+                    goToNextSlide();
+                } else if (event.key === 'ArrowLeft') {
+                    goToPrevSlide();
+                }
+            });
+
+            // 초기 슬라이드 설정
+            showSlide(currentSlide);
+        });
+    </script>
+
+</body>
+</html>
